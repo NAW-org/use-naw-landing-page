@@ -95,8 +95,23 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   const items = [...document.querySelectorAll('[data-en]')];
   items.forEach(el => { el.dataset.es = el.innerHTML; });
 
+  // Artwork with an English variant (falls back to the Spanish art if missing)
+  const art = [...document.querySelectorAll('[data-en-src]')];
+  art.forEach(el => { el.dataset.esSrc = el.getAttribute('src'); el.dataset.esAlt = el.alt; });
+
   function setLang(lang) {
     items.forEach(el => { el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.es; });
+
+    art.forEach(el => {
+      if (lang !== 'en') {
+        el.src = el.dataset.esSrc;
+        el.alt = el.dataset.esAlt;
+        return;
+      }
+      const probe = new Image();
+      probe.onload = () => { el.src = el.dataset.enSrc; el.alt = el.dataset.enAlt || el.alt; };
+      probe.src = el.dataset.enSrc; // missing file → keep the Spanish artwork
+    });
     document.documentElement.lang = lang;
     label.textContent = lang.toUpperCase();
     toggle.setAttribute('aria-label', lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish');
