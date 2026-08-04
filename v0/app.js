@@ -85,6 +85,14 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// ===== Header: solid backdrop once the hero scrolls past =====
+(() => {
+  const nav = document.querySelector('.nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
 // ===== Language toggle (ES ⇄ EN) =====
 // Only real DOM text switches; copy baked into the artwork stays as shipped.
 (() => {
@@ -108,9 +116,15 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         el.alt = el.dataset.esAlt;
         return;
       }
-      const probe = new Image();
-      probe.onload = () => { el.src = el.dataset.enSrc; el.alt = el.dataset.enAlt || el.alt; };
-      probe.src = el.dataset.enSrc; // missing file → keep the Spanish artwork
+      // try AVIF, then the JPG fallback; if neither loads, keep the Spanish art
+      const sources = [el.dataset.enSrc, el.dataset.enFallback].filter(Boolean);
+      (function tryNext(i) {
+        if (i >= sources.length) return;
+        const probe = new Image();
+        probe.onload = () => { el.src = sources[i]; el.alt = el.dataset.enAlt || el.alt; };
+        probe.onerror = () => tryNext(i + 1);
+        probe.src = sources[i];
+      })(0);
     });
     document.documentElement.lang = lang;
     label.textContent = lang.toUpperCase();
