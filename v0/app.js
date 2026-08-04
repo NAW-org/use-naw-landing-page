@@ -85,6 +85,33 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// ===== Language toggle (ES ⇄ EN) =====
+// Only real DOM text switches; copy baked into the artwork stays as shipped.
+(() => {
+  const toggle = document.getElementById('langToggle');
+  const label = document.getElementById('langLabel');
+  if (!toggle) return;
+
+  const items = [...document.querySelectorAll('[data-en]')];
+  items.forEach(el => { el.dataset.es = el.innerHTML; });
+
+  function setLang(lang) {
+    items.forEach(el => { el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.es; });
+    document.documentElement.lang = lang;
+    label.textContent = lang.toUpperCase();
+    toggle.setAttribute('aria-label', lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish');
+    try { localStorage.setItem('naw-v0-lang', lang); } catch (e) { /* private mode */ }
+  }
+
+  toggle.addEventListener('click', () => {
+    setLang(document.documentElement.lang === 'es' ? 'en' : 'es');
+  });
+
+  try {
+    if (localStorage.getItem('naw-v0-lang') === 'en') setLang('en');
+  } catch (e) { /* private mode */ }
+})();
+
 // ===== Carousel: autoplay + arrows + dots + drag =====
 (() => {
   const track = document.getElementById('carTrack');

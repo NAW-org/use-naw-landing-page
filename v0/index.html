@@ -17,11 +17,11 @@
   <header class="nav">
     <img class="nav-logo" src="assets/nK1upUBTIQyQa2cgyJNwuGLeO4.png" alt="Not Another Wallet.">
     <div class="nav-cta">
-      <button class="btn-white lang-toggle" type="button" aria-label="Idioma">
+      <button class="btn-white lang-toggle" id="langToggle" type="button" aria-label="Cambiar a inglés">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.7 5.7 3.7 9S14.4 18.4 12 21c-2.4-2.6-3.7-5.7-3.7-9S9.6 5.6 12 3Z"/></svg>
-        <span>ES</span>
+        <span id="langLabel">ES</span>
       </button>
-      <a class="btn-lime" href="#download">Descarga la App</a>
+      <a class="btn-lime" href="#download" data-en="Download the App">Descarga la App</a>
     </div>
   </header>
 
@@ -32,8 +32,8 @@
 
   <!-- TODO LO QUE NECESITAS -->
   <section class="sec-app">
-    <h2 class="fx fx-up">Todo lo que necesitas,<br>en una sola App.</h2>
-    <p class="sec-app-sub fx fx-up">Pagos en tiendas, transferencias entre personas y envíos internacionales<br>desde una interfaz simple, segura y pensada para tu día a día.</p>
+    <h2 class="fx fx-up" data-en="Everything you need,<br>in a single App.">Todo lo que necesitas,<br>en una sola App.</h2>
+    <p class="sec-app-sub fx fx-up" data-en="In-store payments, transfers between people and international transfers<br>from a simple, secure interface designed for your everyday life.">Pagos en tiendas, transferencias entre personas y envíos internacionales<br>desde una interfaz simple, segura y pensada para tu día a día.</p>
 
     <div class="carousel fx fx-up" id="carousel">
       <div class="car-track" id="carTrack">
@@ -51,14 +51,14 @@
 
   <!-- TU DINERO, TUS BENEFICIOS -->
   <section class="sec-benef">
-    <h2 class="fx fx-up"><b>Tu dinero,</b> tus beneficios</h2>
+    <h2 class="fx fx-up" data-en="<b>Your money,</b> your benefits"><b>Tu dinero,</b> tus beneficios</h2>
     <img class="benef-img fx fx-up" src="assets/19pHEgTADYLOOIxOWa8nSCs5Us.png" alt="Rapidez y Agilidad. Encriptación. Seguridad. Atención 24/7.">
   </section>
 
   <!-- EXPLORA (sticky horizontal gallery) -->
   <section class="explora" id="explora">
     <div class="explora-sticky">
-      <h2 class="fx fx-up">Explora lo que puedes hacer <br>con <b>Not Another Wallet</b></h2>
+      <h2 class="fx fx-up" data-en="Explore what you can do <br>with <b>Not Another Wallet</b>">Explora lo que puedes hacer <br>con <b>Not Another Wallet</b></h2>
       <div class="explora-row" id="exploraRow">
         <img class="exp-card exp-1" src="assets/2GjkSwMKOtseWn0to9752WhP2o.png" alt="Tu día a día.">
         <img class="exp-card exp-2" src="assets/kjQYwGbxQ40n9UjZB4YKL8RKXQ.jpg" alt="Monedero de transporte">
@@ -70,8 +70,8 @@
   <!-- ¿TIENES UN NEGOCIO? -->
   <section class="customers">
     <div class="cust-head fx fx-scale">
-      <h2>¿Tienes un <span class="lime">negocio?</span></h2>
-      <p>Empieza a cobrar, sin terminal,<br>ni mensualidades.</p>
+      <h2 data-en='Do you run a <span class="lime">business?</span>'>¿Tienes un <span class="lime">negocio?</span></h2>
+      <p data-en="Start getting paid, with no card reader<br>and no monthly fees.">Empieza a cobrar, sin terminal,<br>ni mensualidades.</p>
     </div>
     <img class="cust-a fx fx-pop" src="assets/qxOb6ELoXYaEFjbO9CoEQyi3A7M.png" alt="">
     <img class="cust-b fx fx-pop" src="assets/411mcKGroJ7qKy5O12ocOWTamo.png" alt="">
@@ -104,20 +104,20 @@
         <p class="phone-time">9:41</p>
       </div>
     </div>
-    <h2 class="fx fx-up">Descarga la App</h2>
-    <p class="dl-sub fx fx-up">Con NAW, paga, transfiere,<br>ahorra.</p>
+    <h2 class="fx fx-up" data-en="Download the App">Descarga la App</h2>
+    <p class="dl-sub fx fx-up" data-en="With NAW: pay, transfer,<br>save.">Con NAW, paga, transfiere,<br>ahorra.</p>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="foot-left">
       <img class="foot-logo" src="assets/nK1upUBTIQyQa2cgyJNwuGLeO4.png" alt="Not Another Wallet.">
-      <p class="foot-tag">Es tu dinero.</p>
+      <p class="foot-tag" data-en="It&#39;s your money.">Es tu dinero.</p>
     </div>
     <div class="foot-right">
       <p>ⓒ 2025 Not Another Wallet. All Rights Reserved</p>
-      <p><a href="#">Política de privacidad</a></p>
-      <p><a href="#">Términos y condiciones</a></p>
+      <p><a href="#" data-en="Privacy Policy">Política de privacidad</a></p>
+      <p><a href="#" data-en="Terms &amp; Conditions">Términos y condiciones</a></p>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track" id="marqueeTrack">
