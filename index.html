@@ -9,270 +9,133 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page">
 
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <span class="logo-mark"><svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="11" fill="#dbfb30"/><path d="M8 17V7l8 10V7" stroke="#111" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="logo-text">naw</span>
-    </a>
+  <!-- NAV (V1-style header, V0 wordmark logo) -->
+  <header class="nav">
+    <img class="nav-logo" src="assets/nK1upUBTIQyQa2cgyJNwuGLeO4.png" alt="Not Another Wallet.">
     <div class="nav-cta">
-      <button class="btn btn-white btn-sm lang-toggle" id="langToggle" type="button" aria-label="Cambiar a inglés">
+      <button class="btn-white lang-toggle" id="langToggle" type="button" aria-label="Cambiar a inglés">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.6 3.7 5.7 3.7 9S14.4 18.4 12 21c-2.4-2.6-3.7-5.7-3.7-9S9.6 5.6 12 3Z"/></svg>
         <span id="langLabel">ES</span>
       </button>
-      <a href="#descarga" class="btn btn-primary btn-sm" data-en="Download the App">Descarga la App</a>
-      <button class="nav-burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+      <a class="btn-lime" href="#download" data-en="Download the App">Descarga la App</a>
     </div>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <a href="#app" data-en="The App">La App</a>
-    <a href="#beneficios" data-en="Benefits">Beneficios</a>
-    <a href="#explora" data-en="Explore">Explora</a>
-    <a href="#negocios" data-en="Business">Negocios</a>
-    <a href="#descarga" class="btn btn-primary" data-en="Download the App">Descarga la App</a>
-  </div>
-</header>
+  </header>
 
-<!-- ============ HERO ============ -->
-<div class="hero-stage" id="heroStage">
-<section class="hero">
-  <div class="hero-pixels" aria-hidden="true"></div>
-  <div class="hero-illustration reveal" data-delay="300">
-    <figure class="hero-photo">
-      <img src="assets/hero.png" alt="Persona usando Not Another Wallet en su teléfono" draggable="false">
-    </figure>
-    <div class="hero-chips">
-      <span class="chip chip-1">
-        <i><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M17 7.5C17 5.6 14.8 5 12 5s-5 .9-5 2.8c0 4.4 10 1.9 10 6.4 0 1.9-2.2 2.8-5 2.8c-1.4 0-2.5-.5-3-1.5"/></svg></i>
-        <span data-en="We put your money on your side.">Ponemos tu dinero de tu lado.</span>
-      </span>
-      <span class="chip chip-2">
-        <i><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6l7-3Z"/></svg></i>
-        <span data-en="So you can use it whenever and wherever you want.">Para que lo uses cuando y donde quieras.</span>
-      </span>
-      <span class="chip chip-3">
-        <i><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5h14M5 12h14M5 19h9"/></svg></i>
-        <span data-en="No surprise fees. No red tape.">Sin costes sorpresa. Sin burocracia.</span>
-      </span>
-    </div>
-  </div>
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <h1 class="hero-title split-words" data-en='We&#39;re not another <span class="accent">Wallet.</span>'>
-        No somos otra <span class="accent">Wallet más.</span>
-      </h1>
-      <p class="hero-sub reveal" data-delay="350" data-en="We put your money on your side: no surprise fees, no red tape, and the freedom to use it wherever and whenever you want.">
-        Ponemos tu dinero de tu lado: sin costos sorpresa, sin burocracia
-        y con la libertad de usarlo donde y cuando quieras.
-      </p>
-      <div class="btn-group reveal" data-delay="500">
-        <a href="#descarga" class="btn btn-primary" data-en="Download the App">Descarga la App</a>
-        <a href="#app" class="btn btn-white" data-en="Discover NAW">Conoce NAW</a>
+  <!-- HERO (headline is part of the artwork) -->
+  <section class="hero">
+    <img id="heroArt" src="assets/GwhkEkhsc4GyNquCHbSZKhDSFW8.png"
+         data-en-src="assets/hero-en.avif" data-en-fallback="assets/hero-en.jpg"
+         data-en-alt="We are not Another Wallet."
+         alt="No somos otra Wallet más.">
+  </section>
+
+  <!-- TODO LO QUE NECESITAS -->
+  <section class="sec-app">
+    <h2 class="fx fx-up" data-en="Everything you need,<br>in a single App.">Todo lo que necesitas,<br>en una sola App.</h2>
+    <p class="sec-app-sub fx fx-up" data-en="In-store payments, transfers between people and international transfers<br>from a simple, secure interface designed for your everyday life.">Pagos en tiendas, transferencias entre personas y envíos internacionales<br>desde una interfaz simple, segura y pensada para tu día a día.</p>
+
+    <div class="carousel fx fx-up" id="carousel">
+      <div class="car-track" id="carTrack">
+        <img class="car-slide" src="assets/z4NnHmgdJjHf3OkhCdHDdGSOOc.png" alt="">
+        <img class="car-slide" src="assets/LWazjWIO5xfK7SXo2mxsRXEHewk.png" alt="">
+      </div>
+      <button class="car-arrow car-prev" id="carPrev" aria-label="Previous"><img src="assets/6tTbkXggWgQCAJ4DO2QEdXXmgM.svg" alt=""></button>
+      <button class="car-arrow car-next" id="carNext" aria-label="Next"><img src="assets/11KSGbIZoRSg4pjdnUoif6MKHI.svg" alt=""></button>
+      <div class="car-dots" id="carDots">
+        <button class="dot active" aria-label="Scroll to page 1"></button>
+        <button class="dot" aria-label="Scroll to page 2"></button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- TU DINERO, TUS BENEFICIOS -->
+  <section class="sec-benef">
+    <h2 class="fx fx-up" data-en="<b>Your money,</b> your benefits"><b>Tu dinero,</b> tus beneficios</h2>
+    <img class="benef-img fx fx-up" src="assets/19pHEgTADYLOOIxOWa8nSCs5Us.png" alt="Rapidez y Agilidad. Encriptación. Seguridad. Atención 24/7.">
+  </section>
+
+  <!-- EXPLORA (sticky horizontal gallery) -->
+  <section class="explora" id="explora">
+    <div class="explora-sticky">
+      <h2 class="fx fx-up" data-en="Explore what you can do <br>with <b>Not Another Wallet</b>">Explora lo que puedes hacer <br>con <b>Not Another Wallet</b></h2>
+      <div class="explora-row" id="exploraRow">
+        <img class="exp-card exp-1" src="assets/2GjkSwMKOtseWn0to9752WhP2o.png" alt="Tu día a día.">
+        <img class="exp-card exp-2" src="assets/kjQYwGbxQ40n9UjZB4YKL8RKXQ.jpg" alt="Monedero de transporte">
+        <img class="exp-card exp-3" src="assets/5KJ6xL10yDFTuKyCQhtgQLT9R6Y.png" alt="Descarga Not Another Wallet">
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿TIENES UN NEGOCIO? -->
+  <section class="customers">
+    <div class="cust-head fx fx-scale">
+      <h2 data-en='Do you run a <span class="lime">business?</span>'>¿Tienes un <span class="lime">negocio?</span></h2>
+      <p data-en="Start getting paid, with no card reader<br>and no monthly fees.">Empieza a cobrar, sin terminal,<br>ni mensualidades.</p>
+    </div>
+    <img class="cust-a fx fx-pop" src="assets/qxOb6ELoXYaEFjbO9CoEQyi3A7M.png" alt="">
+    <img class="cust-b fx fx-pop" src="assets/411mcKGroJ7qKy5O12ocOWTamo.png" alt="">
+    <img class="cust-c fx fx-pop" src="assets/IBug5b4CDcnZcAsMQvuKPJMc0g.png" alt="">
+    <img class="cust-d fx fx-pop" src="assets/ObWQKmLpTqWghwyPCq0rgI7m40.png" alt="">
+    <img class="cust-e fx fx-pop" src="assets/Q6XMWR63H0qy68vi1knDAg8Gh68.png" alt="">
+    <img class="cust-f fx fx-pop" src="assets/PURS0SAqbe3i3F3WHRWKFDbRWpg.png" alt="">
+    <img class="cust-g fx fx-pop" src="assets/Pp9HtlqpsErXXWV7L6CRDitpHM.png" alt="">
+  </section>
+
+  <!-- DESCARGA LA APP -->
+  <section class="download" id="download">
+    <div class="phones fx fx-up">
+      <div class="phone phone-left">
+        <span class="phone-hole"></span>
+        <img class="phone-screen" src="assets/ov3qmaXq3GTrHRpxH3DiKN6GTb8.jpg" alt="">
+        <img class="phone-frame" src="assets/qrBJWrcCXUJQR9uUYBR4gaot7g.png" alt="">
+        <p class="phone-time">9:42</p>
+      </div>
+      <div class="phone phone-right">
+        <span class="phone-hole"></span>
+        <span class="phone-screen phone-screen-dark"><img src="assets/lpljKu1dE3zPSamaaO6pRRsjkHw.png" alt=""></span>
+        <img class="phone-frame" src="assets/qrBJWrcCXUJQR9uUYBR4gaot7g.png" alt="">
+        <p class="phone-time">9:43</p>
+      </div>
+      <div class="phone phone-center">
+        <span class="phone-hole"></span>
+        <img class="phone-screen" src="assets/Uo5cdJ3e3H9b4iIOrgPgjPKMi0o.png" alt="">
+        <img class="phone-frame" src="assets/qrBJWrcCXUJQR9uUYBR4gaot7g.png" alt="">
+        <p class="phone-time">9:41</p>
+      </div>
+    </div>
+    <h2 class="fx fx-up" data-en="Download the App">Descarga la App</h2>
+    <p class="dl-sub fx fx-up" data-en="With NAW: pay, transfer,<br>save.">Con NAW, paga, transfiere,<br>ahorra.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="foot-left">
+      <img class="foot-logo" src="assets/nK1upUBTIQyQa2cgyJNwuGLeO4.png" alt="Not Another Wallet.">
+      <p class="foot-tag" data-en="It&#39;s your money.">Es tu dinero.</p>
+    </div>
+    <div class="foot-right">
+      <p>ⓒ 2025 Not Another Wallet. All Rights Reserved</p>
+      <p><a href="#" data-en="Privacy Policy">Política de privacidad</a></p>
+      <p><a href="#" data-en="Terms &amp; Conditions">Términos y condiciones</a></p>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <h1>NAW</h1><h1>—</h1><h1>NAW</h1><h1>—</h1><h1>NAW</h1><h1>—</h1>
+        <h1>NAW</h1><h1>—</h1><h1>NAW</h1><h1>—</h1><h1>NAW</h1><h1>—</h1>
+      </div>
+    </div>
+  </footer>
+
 </div>
-
-<!-- ============ TODO EN UNA SOLA APP ============ -->
-<section class="section products" id="app">
-  <div class="container">
-    <h2 class="split-words" data-en='Everything you need,<br>in a <span class="accent">single App.</span>'>Todo lo que necesitas,<br>en una <span class="accent">sola App.</span></h2>
-    <p class="section-sub reveal" data-en="In-store payments, transfers between people and international transfers from a simple, secure interface designed for your everyday life.">Pagos en tiendas, transferencias entre personas y envíos internacionales desde una interfaz simple, segura y pensada para tu día a día.</p>
-    <div class="product-grid product-grid-3">
-      <article class="pcard reveal">
-        <div class="pcard-head">
-          <span class="pcard-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
-          <span class="pcard-arrow">↗</span>
-        </div>
-        <h3 data-en="Payments at shops.">Pagos en comercios.</h3>
-        <p class="pcard-desc" data-en="With NAW you can pay at physical or digital shops quickly, securely and with no need for cash or cards. A smooth payment experience, built into your everyday life, straight from your wallet.">Con NAW puedes pagar en comercios físicos o digitales de forma rápida, segura y sin necesidad de efectivo ni tarjetas. Una experiencia de pago ágil, integrada a tu día a día, directamente desde tu wallet.</p>
-      </article>
-      <article class="pcard reveal" data-delay="100">
-        <div class="pcard-head">
-          <span class="pcard-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg></span>
-          <span class="pcard-arrow">↗</span>
-        </div>
-        <h3 data-en="International transfers">Transferencias internacionales</h3>
-        <p class="pcard-desc" data-en="Send money abroad with speed, transparency and near-zero cost. No borders, no stress.">Manda dinero al extranjero con rapidez, transparencia y costes casi cero. Sin fronteras, sin estrés.</p>
-      </article>
-      <article class="pcard reveal" data-delay="200">
-        <div class="pcard-head">
-          <span class="pcard-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10h10m0 0-3-3m3 3-3 3M17 14H7m0 0 3-3m-3 3 3 3"/></svg></span>
-          <span class="pcard-arrow">↗</span>
-        </div>
-        <h3 data-en="Transfers between friends">Transferencias entre amigos</h3>
-        <p class="pcard-desc" data-en="Send and receive money instantly between contacts, with no hidden fees or complicated steps.">Envía y recibe dinero al instante entre contactos, sin comisiones ocultas ni procesos complejos.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TU DINERO, TUS BENEFICIOS ============ -->
-<section class="section benefits" id="beneficios">
-  <div class="container">
-    <h2 class="split-words" data-en='Your money, your <span class="accent">benefits</span>'>Tu dinero, tus <span class="accent">beneficios</span></h2>
-    <div class="biz-grid">
-      <article class="bcard bcard-orange reveal">
-        <div class="bcard-head">
-          <span class="bcard-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span>
-          <span class="bcard-num mono">01</span>
-        </div>
-        <h3 data-en="Speed and Agility.">Rapidez y Agilidad.</h3>
-      </article>
-      <article class="bcard reveal" data-delay="100">
-        <div class="bcard-head">
-          <span class="bcard-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-          <span class="bcard-num mono">02</span>
-        </div>
-        <h3 data-en="Encryption">Encriptación</h3>
-      </article>
-      <article class="bcard reveal" data-delay="200">
-        <div class="bcard-head">
-          <span class="bcard-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6l7-3Z"/></svg></span>
-          <span class="bcard-num mono">03</span>
-        </div>
-        <h3 data-en="Security">Seguridad</h3>
-      </article>
-      <article class="bcard reveal" data-delay="300">
-        <div class="bcard-head">
-          <span class="bcard-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13a8 8 0 0 1 16 0M4 13v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2Zm16 0v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2Z"/></svg></span>
-          <span class="bcard-num mono">04</span>
-        </div>
-        <h3 data-en="24/7 Support">Atención 24/7</h3>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXPLORA ============ -->
-<section class="section explora" id="explora">
-  <div class="container">
-    <h2 class="split-words" data-en='Explore what you can do<br>with <span class="accent">Not Another Wallet</span>'>Explora lo que puedes hacer<br>con <span class="accent">Not Another Wallet</span></h2>
-    <div class="explora-grid">
-      <article class="ecard ecard-dark reveal">
-        <h3 data-en="Your everyday.">Tu día a día.</h3>
-        <p data-en="Sell your products or services and get paid instantly.">Vende tus productos o servicios y recibe abono al instante.</p>
-        <p data-en="Shop at stores and pay with a single click.">Compra en comercios y paga con un sólo click.</p>
-        <p data-en="Collect your invoices and remittances with no extra cost.">Cobra tus facturas y remesas sin costes adicionales.</p>
-      </article>
-      <article class="ecard ecard-lime reveal" data-delay="120">
-        <h3 data-en="Transit wallet">Monedero de transporte</h3>
-        <p data-en="Top up and pay for your bus, metro or tram tickets with a single tap from the App.">Recarga y paga tus billetes de autobús, metro o tranvía con un solo toque desde la App.</p>
-      </article>
-      <article class="ecard ecard-qr reveal" data-delay="240">
-        <h3 data-en="Download Not Another Wallet">Descarga Not Another Wallet</h3>
-        <p data-en="Scan this QR code and download it now.">Leé este código QR y descargala ahora.</p>
-        <div class="stores">
-          <span class="store mono">Google Play</span>
-          <span class="store mono">App Store</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ¿TIENES UN NEGOCIO? ============ -->
-<section class="section negocios" id="negocios">
-  <div class="container">
-    <div class="about-shell reveal">
-      <div class="about-media">
-        <img src="assets/naw-coin.svg" alt="" class="about-coin" draggable="false">
-      </div>
-      <div class="about-content">
-        <span class="badge-pill"><i></i><span data-en="For business">Para negocios</span></span>
-        <h2 class="about-title split-words" data-en='Do you run a <span class="accent">business</span>?'>¿Tienes un <span class="accent">negocio</span>?</h2>
-        <p class="about-lead" data-en="Start getting paid, with no card reader<br>and no monthly fees.">Empieza a cobrar, sin terminal,<br>ni mensualidades.</p>
-        <a href="#descarga" class="btn btn-primary btn-rect" data-en="Download the App">Descarga la App</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta" id="descarga">
-  <div class="cta-glow"></div>
-  <div class="container cta-inner">
-    <h2 class="split-words" data-en='Download the <span class="accent">App</span>'>Descarga la <span class="accent">App</span></h2>
-    <p class="cta-sub reveal" data-en="With NAW: pay, transfer, save.">Con NAW, paga, transfiere, ahorra.</p>
-    <div class="btn-group reveal" data-delay="150">
-      <a href="#" class="btn btn-primary" data-en="Download the App">Descarga la App</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEWSLETTER ============ -->
-<section class="newsletter">
-  <div class="news-visual">
-    <img src="assets/naw-coin.svg" alt="" draggable="false">
-  </div>
-  <div class="news-content">
-    <h2 class="split-words" data-en='Subscribe to <span class="accent">NAW updates</span>'>Suscríbete a las <span class="accent">novedades de NAW</span></h2>
-    <p class="news-sub reveal" data-en="Updates on in-store payments, transfers between people and international transfers.">Novedades sobre pagos en tiendas, transferencias entre personas y envíos internacionales.</p>
-    <form class="news-form reveal" data-delay="100" onsubmit="return false">
-      <input type="email" placeholder="Introduce tu email" data-en-placeholder="Enter your email" aria-label="Email">
-      <button class="btn btn-primary" type="submit" data-en="Subscribe">Suscribirme</button>
-    </form>
-    <div class="follow reveal" data-delay="200">
-      <span class="follow-label"><i></i><span data-en="Follow us">Síguenos</span></span>
-      <a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.1l4.3 5.6L17.5 3Zm-1 16h1.6L7.6 4.7H5.9L16.5 19Z"/></svg></a>
-      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.5 3c.4 2 1.6 3.4 3.5 3.7v2.6c-1.3.1-2.6-.3-3.7-1v5.9c0 3.4-2.6 5.8-5.8 5.8-2.9 0-5.5-2.2-5.5-5.4 0-3.4 2.9-5.8 6.4-5.3v2.8c-.4-.1-.8-.2-1.2-.2-1.5 0-2.6 1.1-2.6 2.6s1.1 2.7 2.6 2.7c1.5 0 2.7-1.1 2.7-2.8V3h3.6Z"/></svg></a>
-      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.4 2.5 4.4 5.8V21h-4v-5.6c0-1.35-.03-3.1-1.9-3.1s-2.2 1.45-2.2 2.99V21h-4V9Z"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="container footer-top">
-    <div class="footer-brand">
-      <p class="footer-wordmark">Not<br>Another<br>Wallet<span class="accent-underscore">_</span></p>
-      <p class="footer-tagline" data-en="Everything your money needs, in a single app.">Todo lo que tu dinero necesita, en una sola app.</p>
-      <p class="footer-note" data-en="We put your money on your side: no surprise fees, no red tape, and the freedom to use it wherever and whenever you want.">Ponemos tu dinero de tu lado: sin costos sorpresa, sin burocracia y con la libertad de usarlo donde y cuando quieras.</p>
-      <p class="footer-status"><i></i><span data-en="It&#39;s your money.">Es tu dinero.</span></p>
-    </div>
-    <div class="footer-cols">
-      <div class="footer-col">
-        <p class="footer-head" data-en="The App">La App</p>
-        <a href="#app" data-en="Payments at shops">Pagos en comercios</a>
-        <a href="#app" data-en="International transfers">Transferencias internacionales</a>
-        <a href="#app" data-en="Transfers between friends">Transferencias entre amigos</a>
-        <a href="#descarga" data-en="Download the App">Descarga la App</a>
-      </div>
-      <div class="footer-col">
-        <p class="footer-head" data-en="Benefits">Beneficios</p>
-        <a href="#beneficios" data-en="Speed and Agility">Rapidez y Agilidad</a>
-        <a href="#beneficios" data-en="Encryption">Encriptación</a>
-        <a href="#beneficios" data-en="Security">Seguridad</a>
-        <a href="#beneficios" data-en="24/7 Support">Atención 24/7</a>
-      </div>
-      <div class="footer-col">
-        <p class="footer-head" data-en="Explore">Explora</p>
-        <a href="#explora" data-en="Your everyday">Tu día a día</a>
-        <a href="#explora" data-en="Transit wallet">Monedero de transporte</a>
-        <a href="#negocios" data-en="Do you run a business?">¿Tienes un negocio?</a>
-      </div>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <p class="mono">ⓒ 2025 Not Another Wallet. All Rights Reserved</p>
-    <nav class="footer-legal">
-      <a href="#" data-en="Privacy Policy">Política de privacidad</a>
-      <a href="#" data-en="Terms &amp; Conditions">Términos y condiciones</a>
-    </nav>
-  </div>
-  <div class="footer-word" aria-hidden="true">NAW—</div>
-</footer>
-
-<script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
